@@ -1,0 +1,46 @@
+{
+    "name": "phenix/phenix",
+    "description": "Elasticsearch ORM for Laravel/Lumen",
+    "keywords": [
+        "phenix",
+        "aws",
+        "elasticsearch",
+        "laravel",
+        "lumen",
+        "php"
+    ],
+    "homepage": "https://github.com/the-phenix/phenix",
+    "type": "library",
+    "require": {
+        "php": ">=7.2",
+        "aws/aws-sdk-php": "~3.0",
+        "elasticsearch/elasticsearch": "~7.0",
+        "nesbot/carbon": "^2.29.1",
+        "guzzlehttp/guzzle": "~6.5",
+        "logcomex/php-utils": "dev-master"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Crystopher Glodzienski Cardoso",
+            "email": "crystopher.glodzienski@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "alpha",
+    "autoload": {
+        "psr-4": {
+            "Phenix\\Core\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Phenix\\Core\\ElasticSearchServiceProvider"
+            ],
+            "aliases": {
+                "ElasticSearch": "Phenix\\Core\\ElasticSearchFacade"
+            }
+        }
+    }
+}
