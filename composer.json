@@ -27,13 +27,17 @@
             "role": "Developer"
         }
     ],
-    "minimum-stability": "alpha",
     "autoload": {
         "psr-4": {
             "Phenix\\Core\\": "src"
         }
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "extra": {
+        "branch-alias": {
+            "dev-master": "0.x-dev"
+        },
         "laravel": {
             "providers": [
                 "Phenix\\Core\\ElasticSearchServiceProvider"
