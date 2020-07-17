@@ -21,19 +21,19 @@ class ElasticSearchAggregationResponseHandler
             return 'ignored';
         }
 
-        $treated = $agg->treatResponse($aggregationsValues);
+        $treated = collect($agg->treatResponse($aggregationsValues));
 
         if ($agg->hasToHandleSubAggsHimself()) {
-            return $treated;
+            return $treated->toArray();
         }
 
         if ($agg->hasChildren()) {
             foreach ($agg->getChildren() as $aggChild) {
-                $treated[$aggChild->name] = self::treat($aggChild, $aggregationsValues[$aggChild->name]);
+                $treated->put($aggChild->name, self::treat($aggChild, $aggregationsValues[$aggChild->name]));
             }
         }
 
-        return $treated;
+        return $treated->toArray();
     }
 
     /**
@@ -43,12 +43,13 @@ class ElasticSearchAggregationResponseHandler
      */
     public static function go($aggregationsSchema, $aggregationsValues)
     {
-        $treatedResponse = [];
+        $treatedResponse = collect();
 
         foreach ($aggregationsSchema as $aggregation) {
-            $treatedResponse[$aggregation->name] = self::treat($aggregation, $aggregationsValues[$aggregation->name]);
+            $aggregationTreatedValues = self::treat($aggregation, $aggregationsValues[$aggregation->name]);
+            $treatedResponse->put($aggregation->name, $aggregationTreatedValues);
         }
 
-        return $treatedResponse;
+        return $treatedResponse->toArray();
     }
 }

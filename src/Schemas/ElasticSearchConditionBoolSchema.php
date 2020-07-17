@@ -2,12 +2,18 @@
 
 namespace Phenix\Core\Schemas;
 
+use Illuminate\Contracts\Support\Arrayable;
+use Logcomex\PhpUtils\Functionalities\PropertiesExporterFunctionality;
+use Logcomex\PhpUtils\Functionalities\ValuesExporterToArrayFunctionality;
+
 /**
  * Class ElasticSearchConditionBoolSchema
  * @package Phenix\Core\Schema
  */
-class ElasticSearchConditionBoolSchema
+class ElasticSearchConditionBoolSchema implements Arrayable
 {
+    use PropertiesExporterFunctionality,
+        ValuesExporterToArrayFunctionality;
     /**
      * @var array
      */

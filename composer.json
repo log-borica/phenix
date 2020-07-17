@@ -19,6 +19,11 @@
         "guzzlehttp/guzzle": "~6.5",
         "logcomex/php-utils": "dev-master"
     },
+    "require-dev": {
+        "illuminate/contracts": "^6.0",
+        "illuminate/support": "^6.0",
+        "illuminate/http": "^6.0"
+    },
     "license": "MIT",
     "authors": [
         {
