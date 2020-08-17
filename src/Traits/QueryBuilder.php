@@ -573,7 +573,8 @@ trait QueryBuilder
      */
     public function get()
     {
-        if ($this->getFrom() > 10000 || $this->getSize() > 10000) { //10000 é o limite padrão
+        $hasToChangeTheWindowsSizeReturn = ($this->getFrom() + $this->getSize()) > 10000;
+        if ($hasToChangeTheWindowsSizeReturn) { //10000 é o limite padrão
             $this->setMaxRowsCanBeSearch();
         }
 
@@ -588,7 +589,7 @@ trait QueryBuilder
                 $this->getScroll()
             );
 
-        if ($this->getFrom() > 10000 || $this->getSize() > 10000) { //10000 é o limite padrão
+        if ($hasToChangeTheWindowsSizeReturn) { //10000 é o limite padrão
             $this->setMaxRowsCanBeSearch(10000);
         }
 
