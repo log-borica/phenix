@@ -322,9 +322,6 @@ class ElasticSearch
             $credentialProvider = \Aws\Credentials\CredentialProvider::defaultProvider();
 
             $handler = function (array $request) use ($psr7Handler, $signer, $credentialProvider) {
-                // Amazon ES listens on standard ports (443 for HTTPS, 80 for HTTP).
-                $request['headers']['Host'][0] = parse_url($request['headers']['Host'][0])['host'];
-
                 // Create a PSR-7 request from the array passed to the handler
                 $psr7Request = new \GuzzleHttp\Psr7\Request(
                     $request['http_method'],
