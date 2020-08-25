@@ -886,24 +886,14 @@ trait QueryBuilder
      */
     public static function scroll(string $hash, string $time = '1m'): ElasticSearchResponse
     {
-        $client = new Client();
-
-        $requestPayload = [
-            'json' => [
-                'scroll' => $time,
-                'scroll_id' => $hash
-            ]
-        ];
         try {
-            $response = $client->post(config('elasticsearch.host') . "/_search/scroll", $requestPayload)
-                ->getBody()
-                ->getContents();
+            $response = app('elasticsearch')->scroll($hash, $time);
 
             $instance = (new static)->newQuery();
 
             return $instance
                 ->newQuery()
-                ->treatResponse(json_decode($response, true));
+                ->treatResponse($response);
         } catch (\Exception $exception) {
             $failureResponse = new ElasticSearchResponse(collect());
             $failureResponse->scrollHasMissedTheCache = true;
