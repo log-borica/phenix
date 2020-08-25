@@ -94,13 +94,12 @@ trait QueryBuilder
      */
     public static function getAvailableIndexes()
     {
-        $client = new Client();
-
-        $indexes = $client->get(config('elasticsearch.host') . "/_cat/indices?v&format=json")
-            ->getBody()
-            ->getContents();
-
-        return json_decode($indexes, true);
+        return app('elasticsearch')
+            ->cat()
+            ->indices([
+                'v' => true,
+                'format' => 'json'
+            ]);
     }
 
     /**
@@ -636,16 +635,13 @@ trait QueryBuilder
      */
     private function setMaxRowsCanBeSearch(int $maxResult = null): void
     {
-        $client = new Client();
-        $index = $this->getIndex();
         $firstRow = $this->getFrom();
         $size = $this->getSize();
 
-        $client->put(config('elasticsearch.host') . "/{$index}/_settings", [
-            'json' => [
+        app('elasticsearch')
+            ->updateSettings([
                 'max_result_window' => $maxResult ?? ($firstRow + $size + 1)
-            ]
-        ]);
+            ], $this->getIndex());
     }
 
     /**
