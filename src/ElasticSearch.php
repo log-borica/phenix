@@ -361,4 +361,14 @@ class ElasticSearch
 
         return $client_builder->build();
     }
+
+    /**
+     * @param string $hash
+     * @param string $time
+     * @return array|callable
+     */
+    public function scroll(string $hash, string $time = '1m')
+    {
+        return $this->client->scroll(['scroll_id' => $hash, 'scroll' => $time]);
+    }
 }
