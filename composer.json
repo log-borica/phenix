@@ -17,7 +17,7 @@
         "elasticsearch/elasticsearch": "~7.0",
         "nesbot/carbon": "^2.29.1",
         "guzzlehttp/guzzle": "~6.5",
-        "logcomex/php-utils": "^0.0"
+        "logcomex/php-utils": "^0.1"
     },
     "require-dev": {
         "illuminate/contracts": "^6.0",
