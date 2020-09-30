@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b86338b2ad908a3db4951ee8d2bed704",
+    "content-hash": "881e1e7dc90fb336611ace3d86591fc4",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.155.4",
+            "version": "3.156.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "892ec081f4466ea023d6158d78b6a8b82d38c9ae"
+                "reference": "994831c4560d8c309882f5d5b9adafb85748f0e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/892ec081f4466ea023d6158d78b6a8b82d38c9ae",
-                "reference": "892ec081f4466ea023d6158d78b6a8b82d38c9ae",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/994831c4560d8c309882f5d5b9adafb85748f0e8",
+                "reference": "994831c4560d8c309882f5d5b9adafb85748f0e8",
                 "shasum": ""
             },
             "require": {
@@ -92,9 +92,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.155.4"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.156.0"
             },
-            "time": "2020-09-28T18:13:43+00:00"
+            "time": "2020-09-29T18:17:44+00:00"
         },
         {
             "name": "elasticsearch/elasticsearch",
@@ -343,23 +343,23 @@
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "v1.3.1",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646"
+                "reference": "60d379c243457e073cff02bc323a2a86cb355631"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/a59da6cf61d80060647ff4d3eb2c03a2bc694646",
-                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/60d379c243457e073cff02bc323a2a86cb355631",
+                "reference": "60d379c243457e073cff02bc323a2a86cb355631",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.0"
+                "php": ">=5.5"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.0"
+                "symfony/phpunit-bridge": "^4.4 || ^5.1"
             },
             "type": "library",
             "extra": {
@@ -392,22 +392,22 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/promises/issues",
-                "source": "https://github.com/guzzle/promises/tree/master"
+                "source": "https://github.com/guzzle/promises/tree/1.4.0"
             },
-            "time": "2016-12-20T10:07:11+00:00"
+            "time": "2020-09-30T07:37:28+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.6.1",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "239400de7a173fe9901b9ac7c06497751f00727a"
+                "reference": "53330f47520498c0ae1f61f7e2c90f55690c06a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/239400de7a173fe9901b9ac7c06497751f00727a",
-                "reference": "239400de7a173fe9901b9ac7c06497751f00727a",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/53330f47520498c0ae1f61f7e2c90f55690c06a3",
+                "reference": "53330f47520498c0ae1f61f7e2c90f55690c06a3",
                 "shasum": ""
             },
             "require": {
@@ -420,15 +420,15 @@
             },
             "require-dev": {
                 "ext-zlib": "*",
-                "phpunit/phpunit": "~4.8.36 || ^5.7.27 || ^6.5.8"
+                "phpunit/phpunit": "~4.8.36 || ^5.7.27 || ^6.5.14 || ^7.5.20 || ^8.5.8 || ^9.3.10"
             },
             "suggest": {
-                "zendframework/zend-httphandlerrunner": "Emit PSR-7 responses"
+                "laminas/laminas-httphandlerrunner": "Emit PSR-7 responses"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.6-dev"
+                    "dev-master": "1.7-dev"
                 }
             },
             "autoload": {
@@ -467,22 +467,22 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/psr7/issues",
-                "source": "https://github.com/guzzle/psr7/tree/1.6.1"
+                "source": "https://github.com/guzzle/psr7/tree/1.7.0"
             },
-            "time": "2019-07-01T23:21:34+00:00"
+            "time": "2020-09-30T07:37:11+00:00"
         },
         {
             "name": "logcomex/php-utils",
-            "version": "0.3.0",
+            "version": "0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/comexio/php-utils.git",
-                "reference": "5e7f139aa15a988d360517a0b23427f384ae47d0"
+                "reference": "c548a3652d1812891e371a8d73d7a87fb6ceebfb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/comexio/php-utils/zipball/5e7f139aa15a988d360517a0b23427f384ae47d0",
-                "reference": "5e7f139aa15a988d360517a0b23427f384ae47d0",
+                "url": "https://api.github.com/repos/comexio/php-utils/zipball/c548a3652d1812891e371a8d73d7a87fb6ceebfb",
+                "reference": "c548a3652d1812891e371a8d73d7a87fb6ceebfb",
                 "shasum": ""
             },
             "require": {
@@ -509,9 +509,9 @@
             "description": "PHP Utils for Lumen and Laravel projects",
             "support": {
                 "issues": "https://github.com/comexio/php-utils/issues",
-                "source": "https://github.com/comexio/php-utils/tree/0.3.0"
+                "source": "https://github.com/comexio/php-utils/tree/0.4.0"
             },
-            "time": "2020-09-28T19:16:53+00:00"
+            "time": "2020-09-30T13:27:23+00:00"
         },
         {
             "name": "mtdowling/jmespath.php",
@@ -1592,7 +1592,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v6.18.40",
+            "version": "v6.18.41",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -1640,16 +1640,16 @@
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v6.18.40",
+            "version": "v6.18.41",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
-                "reference": "f5ad508938fa8130b28de8a1a22210a7be8401e2"
+                "reference": "fa327c07771f872d606e753ef1765252fd843544"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/filesystem/zipball/f5ad508938fa8130b28de8a1a22210a7be8401e2",
-                "reference": "f5ad508938fa8130b28de8a1a22210a7be8401e2",
+                "url": "https://api.github.com/repos/illuminate/filesystem/zipball/fa327c07771f872d606e753ef1765252fd843544",
+                "reference": "fa327c07771f872d606e753ef1765252fd843544",
                 "shasum": ""
             },
             "require": {
@@ -1693,11 +1693,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2020-08-13T14:33:00+00:00"
+            "time": "2020-09-23T07:35:10+00:00"
         },
         {
             "name": "illuminate/http",
-            "version": "v6.18.40",
+            "version": "v6.18.41",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/http.git",
@@ -1751,7 +1751,7 @@
         },
         {
             "name": "illuminate/session",
-            "version": "v6.18.40",
+            "version": "v6.18.41",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/session.git",
@@ -1806,7 +1806,7 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v6.18.40",
+            "version": "v6.18.41",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
