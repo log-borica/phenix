@@ -1,4 +1,4 @@
-# aws-elasticsearch-laravel
+# phenix
 AWS Elasticsearch Service for Laravel/Lumen
 
 **NOTE:** This package only caters search, aggregation, and indexing transactions. Other than that, you can refer to [elasticsearch's official documentation](https://www.elastic.co/guide/en/elasticsearch/client/php-api/index.html).
@@ -6,7 +6,7 @@ AWS Elasticsearch Service for Laravel/Lumen
 
 ## Installation
 
-    composer require glodzienski/aws-elasticsearch-laravel
+    composer require the-phenix/phenix
 
 ## Laravel/Lumen Integration
 
