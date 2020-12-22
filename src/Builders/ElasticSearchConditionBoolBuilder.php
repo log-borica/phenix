@@ -29,6 +29,26 @@ class ElasticSearchConditionBoolBuilder
      * @var Collection
      */
     private $conditions;
+    /**
+     * @var string
+     */
+    private $name;
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName(string $name): void
+    {
+        $this->name = $name;
+    }
 
     /**
      * @return Collection
@@ -155,6 +175,12 @@ class ElasticSearchConditionBoolBuilder
     {
         $conditionBoolSchema = new ElasticSearchConditionBoolSchema();
         $conditions = $this->getConditions();
+
+        if ($this->getName()) {
+            $conditionBoolSchema->_name = $this->getName();
+        } else {
+            unset($conditionBoolSchema->_name);
+        }
 
         $conditionBoolSchema->must = $this->buildMustConditions($conditions);
         $conditionBoolSchema->must_not = $this->buildMustNotConditions($conditions);
