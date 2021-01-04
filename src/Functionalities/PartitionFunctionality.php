@@ -16,6 +16,7 @@ trait PartitionFunctionality
      * @var integer
      */
     public $numPartitions;
+
     /**
      * @param int $partition
      * @param int $partitionsNumber
