@@ -2,8 +2,10 @@
 
 namespace Phenix\Core\Aggregations;
 
+use Phenix\Core\Contracts\PartitionFunctionalityContract;
 use Phenix\Core\Contracts\SizeFunctionalityContract;
 use Phenix\Core\Contracts\SortFunctionalityContract;
+use Phenix\Core\Functionalities\PartitionFunctionality;
 use Phenix\Core\Functionalities\SortFunctionality;
 use Phenix\Core\Handlers\ElasticSearchAggregationResponseHandler;
 use Phenix\Core\Enumerators\ElasticSearchAggregationTypeEnum;
@@ -13,9 +15,10 @@ use Phenix\Core\Functionalities\SizeFunctionality;
  * Class ElasticSearchTermsAggregation
  * @package Phenix\Core\Aggregations
  */
-class ElasticSearchTermsAggregation extends ElasticSearchAggregation implements SizeFunctionalityContract, SortFunctionalityContract
+class ElasticSearchTermsAggregation extends ElasticSearchAggregation
+    implements SizeFunctionalityContract, SortFunctionalityContract, PartitionFunctionalityContract
 {
-    use SizeFunctionality, SortFunctionality;
+    use SizeFunctionality, SortFunctionality, PartitionFunctionality;
 
     /**
      * ElasticSearchTermsAggregation constructor.
@@ -43,6 +46,12 @@ class ElasticSearchTermsAggregation extends ElasticSearchAggregation implements 
         if ($this->hasSorter()) {
             $payload['order'] = [
                 $this->sortBy => $this->sortType
+            ];
+        }
+        if ($this->hasPartition()) {
+            $payload['include'] = [
+                'partition' => $this->partition,
+                'num_partition' =>$this->numPartition
             ];
         }
 

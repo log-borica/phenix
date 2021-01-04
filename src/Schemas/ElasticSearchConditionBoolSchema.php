@@ -14,6 +14,7 @@ class ElasticSearchConditionBoolSchema implements Arrayable
 {
     use PropertiesExporterFunctionality,
         ValuesExporterToArrayFunctionality;
+
     /**
      * @var array
      */
@@ -26,6 +27,10 @@ class ElasticSearchConditionBoolSchema implements Arrayable
      * @var array
      */
     public $should;
+    /**
+     * @var string
+     */
+    public $_name;
 
     /**
      * ElasticSearchConditionBoolSchema constructor.
