@@ -51,7 +51,7 @@ class ElasticSearchTermsAggregation extends ElasticSearchAggregation
         if ($this->hasPartition()) {
             $payload['include'] = [
                 $this->partition,
-                $this->num_partition
+                $this->numPartition
             ];
         }
 
