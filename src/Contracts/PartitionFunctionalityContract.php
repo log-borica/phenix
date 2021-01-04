@@ -10,8 +10,8 @@ interface PartitionFunctionalityContract
 {
     /**
      * @param int $partition
-     * @param int $partitionNumber
+     * @param int $partitionsNumber
      * @return mixed
      */
-    public function createPartition(int $partition = 0, int $partitionNumber = 0);
+    public function createPartition(int $partition = 0, int $partitionsNumber = 0);
 }
