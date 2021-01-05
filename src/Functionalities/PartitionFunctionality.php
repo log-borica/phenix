@@ -15,16 +15,17 @@ trait PartitionFunctionality
     /**
      * @var integer
      */
-    public $numPartition;
+    public $numPartitions;
+
     /**
      * @param int $partition
-     * @param int $partitionNumber
+     * @param int $partitionsNumber
      * @return $this
      */
-    public function createPartition(int $partition = 0, int $partitionNumber = 0): self
+    public function createPartition(int $partition = 0, int $partitionsNumber = 0): self
     {
         $this->partition = $partition;
-        $this->numPartition = $partitionNumber;
+        $this->numPartitions = $partitionsNumber;
 
         return $this;
     }
@@ -34,6 +35,6 @@ trait PartitionFunctionality
      */
     public function hasPartition(): bool
     {
-        return isset($this->partition) && isset($this->numPartition);
+        return isset($this->partition) && isset($this->numPartitions);
     }
 }
