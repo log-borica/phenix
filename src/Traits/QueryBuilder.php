@@ -172,13 +172,18 @@ trait QueryBuilder
     /**
      * @param Closure $field
      * @param string $conditionDeterminant
+     * @param string|null $name
      */
     private function applyNestedWhere(Closure $field,
-                                      string $conditionDeterminant = ConditionDeterminantTypeEnum::MUST): void
+                                      string $conditionDeterminant = ConditionDeterminantTypeEnum::MUST,
+                                      ?string $name): void
     {
         $currentBool = $this->getConditionBoolBuilder();
 
         $nestedConditionBoolBuilder = new ElasticSearchConditionBoolBuilder();
+        if ($name) {
+            $nestedConditionBoolBuilder->setName($name);
+        }
         $nestedConditionBoolBuilder
             ->setBoolParent($currentBool)
             ->setBoolDeterminantType($conditionDeterminant);
@@ -213,17 +218,20 @@ trait QueryBuilder
                                            $field,
                                            $value = null): void
     {
+        $args = func_get_args();
         if ($field instanceof Closure) {
-            self::applyNestedWhere($field, $conditionDeterminant);
+            $name = null;
+            if (count($args) === 3) {
+                list($conditionDeterminant, $field, $name) = $args;
+            }
+            self::applyNestedWhere($field, $conditionDeterminant, $name);
 
             return;
         }
 
-        $args = func_get_args();
         if (count($args) == 4) {
             list($conditionDeterminant, $field, $operator, $value) = $args;
-        }
-        else {
+        } else {
             $operator = '=';
         }
 
