@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5729df97d79c9dc52969ea5b9f3fed35",
+    "content-hash": "09ef02b35fc5759a6555741ee73bbcd6",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -447,16 +447,16 @@
         },
         {
             "name": "logcomex/php-utils",
-            "version": "0.7.0",
+            "version": "0.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/comexio/php-utils.git",
-                "reference": "923a80c06fdcf5249a3b72a115d99afca925f4dd"
+                "reference": "74e96763fcd199abb5ba193de22f241877230592"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/comexio/php-utils/zipball/923a80c06fdcf5249a3b72a115d99afca925f4dd",
-                "reference": "923a80c06fdcf5249a3b72a115d99afca925f4dd",
+                "url": "https://api.github.com/repos/comexio/php-utils/zipball/74e96763fcd199abb5ba193de22f241877230592",
+                "reference": "74e96763fcd199abb5ba193de22f241877230592",
                 "shasum": ""
             },
             "require": {
@@ -484,9 +484,9 @@
             "description": "PHP Utils for Lumen and Laravel projects",
             "support": {
                 "issues": "https://github.com/comexio/php-utils/issues",
-                "source": "https://github.com/comexio/php-utils/tree/0.7.0"
+                "source": "https://github.com/comexio/php-utils/tree/0.8.1"
             },
-            "time": "2021-02-08T20:28:18+00:00"
+            "time": "2021-02-13T17:19:51+00:00"
         },
         {
             "name": "mtdowling/jmespath.php",
