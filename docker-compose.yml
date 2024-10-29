@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  php:
+    build:
+      context: .
+      dockerfile: ./.docker/Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8001:80"
+    volumes:
+      - ".:/var/www/app"

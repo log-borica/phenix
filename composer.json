@@ -11,10 +11,16 @@
     ],
     "homepage": "https://github.com/the-phenix/phenix",
     "type": "library",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:log-borica/elasticsearch.git"
+        }
+    ],
     "require": {
         "php": ">=7.2",
         "aws/aws-sdk-php": "~3.0",
-        "elasticsearch/elasticsearch": "~7.0",
+        "log-borica/elasticsearch": "dev-main",
         "nesbot/carbon": "^2.29.1",
         "guzzlehttp/guzzle": "~6.5",
         "logcomex/php-utils": "^0"
